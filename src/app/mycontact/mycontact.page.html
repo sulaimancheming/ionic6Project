@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-button slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-button>
+    <ion-title>mycontact</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h3 style="font-size: 1.5em; text-align: center;">ข้อมูลการติดต่อ</h3>
+  <ion-list>
+    <ion-item>เบอร์มือถือ: {{myContactInfo.tel}}</ion-item>
+    <ion-item>อีเมล์: {{myContactInfo.email}}</ion-item>
+    <ion-item>อายุ: {{myContactInfo.age}}</ion-item>
+  </ion-list>
+
+  <ion-button expand="full" shape="round"
+  (click)="gotoaddressPage()">My Address Info</ion-button>
+    <ion-button expand="full" shape="round"
+    (click)="gotoContactPage()">BACK</ion-button>
+</ion-content>

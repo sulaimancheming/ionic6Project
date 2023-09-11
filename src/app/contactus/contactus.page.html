@@ -1,0 +1,71 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>contactus</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h3 style="font-size: 1.5em; text-align: center;">ติดต่อเรา</h3>
+  <form #contactUsForm ="ngForm"(ngSubmit)="submitForm(contactUsForm.value)">
+    <ion-list>
+      <ion-item>
+        <ion-icon slot="start" name="person"></ion-icon>
+        <ion-label position="stacked">Full Name</ion-label>
+        <ion-input name="fullname" type="text" ngModel required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon slot="start" name="mail"></ion-icon>
+        <ion-label position="stacked">E-mail</ion-label>
+        <ion-input name="email" type="email" pattern="[a-z0-9._]+@[a-z0-9._]+.[a-z]"
+                   ngModel required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon slot="start" name="call"></ion-icon>
+        <ion-label position="stacked">Phone Number</ion-label>
+        <ion-input name="phoneNumber" type="Number" ngModel required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon slot="start" name="male-female"></ion-icon>
+        <ion-label position="stacked">Gender</ion-label>
+        <ion-input name="gender" ngModel required>
+          <ion-select-option value="female">famale</ion-select-option>
+          <ion-select-option value="male">male</ion-select-option>
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon slot="start" name="calender"></ion-icon>
+        <ion-label position="stacked">Current Date</ion-label>
+        <ion-input name="currentDate" type="date" ngModel required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Type your message here</ion-label>
+        <ion-textarea name="message" rows="2" ngModel required></ion-textarea>
+      </ion-item>
+    </ion-list>
+
+    <ion-button type="submit" expand="full" shape="round" [disabled]="contactUsForm.invalid">Send</ion-button>
+    <ion-button type="reset" expand="full" shape="round" color="warning">Reset</ion-button>
+  </form>
+
+  <ion-card *nggif="isFormSubmitted === true">
+    <ion-card-header>
+      <ion-card-title>แสดงข้อมูลที่ผู้ใช้กรอก</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>Full Name: {{fullName}}</ion-item>
+      <ion-item>E-mail: {{email}}</ion-item>
+      <ion-item>Phone Number: {{phoneNumber}}</ion-item>
+      <ion-item>Gender: {{gender}}</ion-item>
+      <ion-item>Current Date: {{currentDate}}</ion-item>
+      <ion-item>Message: {{message}}</ion-item>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

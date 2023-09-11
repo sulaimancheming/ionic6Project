@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-buttons slot="start">
+
+    <ion-menu-button></ion-menu-button>
+  </ion-buttons>
+  <ion-toolbar>
+    <ion-title>members</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <h3 style="font-size: 1.5em; text-align: center">เพิ่มข้อมูลสมาชิก</h3>
+  <form #addMembersForm = "ngForm" (ngSubmit)="addData(addMembersForm.value); addMembersForm.reset();">
+    <ion-list>
+      <ion-item>
+        <ion-label position="floating">รหัสสมมาชิก</ion-label>
+        <ion-input type="text" name="member_id" ngModel required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">ชื่อ</ion-label>
+        <ion-input type="text" name="name" ngModel required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">นามสกุล</ion-label>
+        <ion-input type="text" name="surname" ngModel required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">เพศ</ion-label>
+        <ion-input type="text" name="gender" ngModel required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">อายุ</ion-label>
+        <ion-input type="number" name="age" ngModel required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">เบอร์โทร</ion-label>
+        <ion-input type="text" name="tel" ngModel required></ion-input>
+      </ion-item>
+
+
+        <ion-button type="submit" expand="full" shape="round" [disabled]="addMembersForm.invalid">บันทึกข้อมูล</ion-button>
+        <ion-button type="reset" expand="full" shape="round" color="danger">ล้างข้อมูล</ion-button>
+    </ion-list>
+  </form>
+
+  <h3 style="font-size: 1.5em; text-align: center">ข้อมูลสมาชิก</h3>
+  <ion-card *ngFor="let document of documents">
+    <ion-card-title>รหัสสมมาชิก: {{document.memberID}}</ion-card-title>
+    <ion-card-content>
+      <ion-label>
+        <p>ชื่อ: {{document.name}} </p>
+        <p>นามสกุล: {{document.surname}} </p>
+        <p>เพศ: {{document.gender}} </p>
+        <p>อายู: {{document.age}} </p>
+        <p>เบอร์โทร: {{document.tel}} </p>
+      </ion-label>
+      <ion-button color="danger" (click)="deleteData(document.doc_id)">ลบข้อมูล</ion-button>
+      <ion-button color="secondary" (click)="gotoUpdateMemberPage(document)">อัปเดทข้อมูล</ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

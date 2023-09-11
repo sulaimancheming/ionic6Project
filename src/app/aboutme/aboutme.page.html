@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-button slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-button>
+    <ion-title> หน้าหลัก </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h3 style="font-size: 1.5em; text-align: center;">ข้อมูลเกี่ยวกับเรา</h3>
+  <div align="center">
+    <img src="assets/images/10927.jpg" width="150" height="130">
+  </div>
+  <ion-list>
+    <ion-item>ชื่อ-นามสกุล: สุไลมาน เจะหมิง</ion-item>
+    <ion-item>รหัสนักศึกษา: 6320610098</ion-item>
+    <ion-item>สาขาวิชา: เทคโนโลยีสารสนเทศและการศึกษาเพื่อการจัดการ</ion-item>
+    <ion-item>ชั้นปี: ที่ 3</ion-item>
+    <ion-item>คณะ: วิทยาการสื่อสาร</ion-item>
+
+  </ion-list>
+    <ion-button expand="full" shape="round"
+                (click)="gotoContactPage()">MY Contact info</ion-button>
+</ion-content>

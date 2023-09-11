@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-button slot="star">
+      <ion-menu-button></ion-menu-button>
+    </ion-button>
+    <ion-title>news</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card style="border: 1px solid blue" *ngFor="let news of newsArticles">
+
+    <img src = {{news.urlToImage}}>
+    <ion-card-title>
+      <a href={{news.url}}>{{news.title}}</a>
+    </ion-card-title>
+    <ion-card-subtitle>{{news.publishedAt | date}}</ion-card-subtitle>
+    <ion-card-content>{{news.description}}</ion-card-content>
+
+  </ion-card>
+</ion-content>

@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>update-member</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h3 style="font-size: 1.5em; text-align: center">อัปเดทข้อมูลสมาชิก</h3>
+  <ion-card>
+    <ion-item>
+      <ion-label position="floating">รหัสสมมาชิก</ion-label>
+      <ion-input type="text" [(ngModel)]="memberID"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">ชื่อ</ion-label>
+      <ion-input type="text" [(ngModel)]="name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">นามสกุล</ion-label>
+      <ion-input type="text" [(ngModel)]="surname"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">เพศ</ion-label>
+      <ion-input type="text" [(ngModel)]="gender"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">อายุ</ion-label>
+      <ion-input type="number" [(ngModel)]="age"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">เบอร์โทร</ion-label>
+      <ion-input type="text" [(ngModel)]="tel"></ion-input>
+    </ion-item>
+    <ion-button type="submit" expand="full" shape="round" (click)="updateData()">อัปเดทข้อมูล</ion-button>
+    <ion-button type="reset" expand="full" shape="round" color="secondary" (click)="gotoPrevPage()">ย้อนกลับ</ion-button>
+  </ion-card>
+</ion-content>
